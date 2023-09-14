@@ -8,14 +8,16 @@ from selenium.webdriver.support import ui
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 website = 'https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.xhtml'
 
-chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome('/usr/bin/chromedriver',options=chrome_options)
+service = Service(executable_path=r'/usr/bin/chromedriver')
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(service=service, options=options)
 
 driver.get(website)
 
