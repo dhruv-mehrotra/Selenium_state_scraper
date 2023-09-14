@@ -7,10 +7,16 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import ui
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 
 website = 'https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.xhtml'
 
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
+
 driver.get(website)
 
 state_labels = ['Andaman & Nicobar Island(8)', 'Andhra Pradesh(80)', 'Arunachal Pradesh(26)', 'Assam(36)', 'Bihar(49)', 'Chhattisgarh(30)', 'Delhi(23)', 'Haryana(179)', 'Jharkhand(30)', 'Maharashtra(53)', 'Madhya Pradesh(52)', 'Chandigarh(1)', 'UT of DNH and DD(3)', 'Goa(13)', 'Gujarat(37)', 'Himachal Pradesh(113)', 'Jammu and Kashmir(21)', 'Karnataka(68)', 'Kerala(87)', 'Ladakh(3)', 'Meghalaya(13)', 'Manipur(12)', 'Mizoram(10)', 'Nagaland(9)', 'Odisha(39)', 'Puducherry(8)', 'Sikkim(8)', 'Tamil Nadu(146)', 'Tripura(9)', 'West Bengal(56)', 'Punjab(93)', 'Rajasthan(142)', 'Uttarakhand(21)', 'Uttar Pradesh(78)']
