@@ -113,7 +113,7 @@ for state_label in state_labels:
         
         # set as BOV
         bov_fuel = driver.find_element(By.XPATH, '//label[@for="fuel:7"]')
-        time.sleep(0.5)
+        time.sleep(1)
         bov_fuel.click()
         print("bov called")
         time.sleep(3)
