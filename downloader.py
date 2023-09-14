@@ -133,7 +133,7 @@ for state_label in state_labels:
             time.sleep(6)
             
             # download sheet
-            download_butt = driver.find_element(By.ID, "groupingTable:j_idt83")
+            download_butt = driver.find_element(By.ID, "groupingTable:j_idt75")
             time.sleep(2)
             download_butt.click()
             time.sleep(5)
