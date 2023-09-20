@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 website = 'https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.xhtml'
 
@@ -17,7 +19,9 @@ website = 'https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.
 # options.add_argument('--headless')
 # options.add_argument('--no-sandbox')
 # options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Firefox()
+# options = Options()
+# options.binary = FirefoxBinary()
+driver = webdriver.Firefox(executable_path='/usr/bin/firefox')
 
 driver.get(website)
 
