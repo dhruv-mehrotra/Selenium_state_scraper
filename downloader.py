@@ -19,9 +19,10 @@ website = 'https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.
 # options.add_argument('--headless')
 # options.add_argument('--no-sandbox')
 # options.add_argument('--disable-dev-shm-usage')
-# options = Options()
-# options.binary = FirefoxBinary()
-driver = webdriver.Firefox(executable_path='/usr/bin/firefox')
+options = Options()
+options.binary = FirefoxBinary(r'usr/bin/firefox')
+
+driver = webdriver.Firefox(options=options)
 
 driver.get(website)
 
