@@ -13,11 +13,11 @@ from selenium.webdriver.chrome.service import Service
 website = 'https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.xhtml'
 
 service = Service(executable_path=r'/usr/bin/chromedriver')
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(options=options)
+# options = webdriver.ChromeOptions()
+# options.add_argument('--headless')
+# options.add_argument('--no-sandbox')
+# options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(service=service)
 
 driver.get(website)
 
