@@ -27,7 +27,7 @@ vehicle_classes = ['VhClass:19', 'VhClass:20', 'VhClass:58', 'VhClass:59']
 for state_label in state_labels:
     # select state
     print(state_label)
-    state_box = driver.find_element(By.ID, "j_idt35_label")
+    state_box = driver.find_element(By.ID, "j_idt31_label")
     time.sleep(0.25)
     state_box.click()
     time.sleep(0.25)
