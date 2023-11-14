@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import pandas as pd
 import time
+from datetime import datetime
+from shutil import copy2
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import ui
 from selenium.webdriver.support import expected_conditions as EC
@@ -143,5 +145,10 @@ for state_label in state_labels:
             time.sleep(0.5)
             type.click()
             time.sleep(2)
+            
+            # rename file
+            timestamp = str(datetime.now())[:19]
+            timestamp = timestamp.replace(':', '_')
+            copy2('reportTable.xlsx', f'reportTable-{timestamp}.xlsx')
 
     print(state_label + "========over==========")
